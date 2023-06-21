@@ -14,21 +14,25 @@ CardActions = web.export(mui, "CardActions")
 Alert = web.export(mui, "Alert")
 Typography = web.export(mui, "Typography")
 
+
 @component
 def childComponent():
     return html.div(
-        Card({"maxWidth":"350px"},
-            CardContent(
+        Container(
+            # {"style": {"width": "100%", "background-color":"lightblue"}},
+            Card({"maxWidth": "50px"},
+                 CardContent(
                 Typography({
-                    "variant": "h2",        
-                    }, "Hello World"),
-                    ),
-            CardActions(
+                    "variant": "h2",
+                }, "Hello World"),
+            ),
+                CardActions(
                 Button({
-                    "color":"primary",
+                    "color": "primary",
                     "variant": "contained"
-                            
-                    }, "Submit Data")
-                )
+
+                }, "Submit Data")
+            )
             )
         )
+    )
